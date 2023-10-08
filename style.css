@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    background-color: rgb(50, 50, 50);
+    font-family: 'Poppins', sans-serif;
+    min-width: 660px;
+} 
+
+#headerDiv{
+    margin: 5px;
+    align-items: center;
+}
+
+#header{
+    font-size: 2.5em;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+#menuDiv{
+    margin-top: 5px;
+    width: 100%;
+} 
+
+#imgSlider{
+    width: 100%;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#borderImg {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    outline: 5px solid black;
+    margin-top: 10px;
+}
+
+#images{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    left: -180px;
+}
+
+.slideImg {
+    width: 180px;
+    height: 180px;
+}
+
+.arrow{
+    cursor: pointer;
+    margin: 0;
+    padding: 0 16px;
+    -webkit-text-stroke: 1px white;
+    transition: all ease 0.3s;
+}
+
+.arrow:hover{
+    transform: scale(1.1);
+    transition: all ease 0.3s;
+}
+
+#interactionDiv {
+    width: 610px;
+    margin: 10px auto;
+    display: flex;
+}
+
+#buttonsModeDiv{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn{
+    padding: 6px 14px;
+    margin: 0 10px;
+    color: white;
+    font-weight: bold;
+    background-color:  rgb(20, 20, 20);
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(50, 50, 50);
+}
+
+.white{
+    border-color: white;
+}
+
+#timerDiv{
+    margin-top: 10px;
+    height: 42px;
+    width: 100%;
+    text-align: center;
+}
+
+#timerDiv img{
+    height: 34px;
+}
+
+#baseElementsDiv{
+    width: 60%;
+    height: 95px;
+}
+
+#leftSideDiv, #rightSideDiv {
+    width: 20%;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#leftSideDiv button {
+    margin: 5px 0;
+    padding: 4px 0;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#leftSideDiv button:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#labelMoves {
+    color: white;
+    font-size: 22px;
+    padding-top: 5px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+}
+
+#countMoves {
+    padding: 5px 0;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+}
+
+#gameDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#arena {
+    width: 600px;
+    height: 600px;
+    outline: 5px solid black;
+    position: relative;
+}
+
+.puzzle {
+    box-sizing: border-box;
+    background-size: 600px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: absolute;
+    padding: 10px;
+    padding-top: 15px;
+    font-size: 24px;
+    color: red;
+}
+
+.puzzleAfter::after{
+    content: attr(data-number);
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.blackScreen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.mainAlertDiv{
+    background-color:  rgb(30, 30, 30);
+    border: 5px solid white;
+    border-radius: 15px;
+    z-index: 10;
+    position: absolute;
+}
+
+.infoDiv{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.winAlert{
+    width: 360px;
+    height: 180px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    line-height: 200%;
+    top: calc(50vh - 100px);
+    left: calc(50vw - 180px);
+}
+
+#inputName {
+    margin-top: 10px;
+    width: 80%;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    height: 30px;
+    font-size: 18px;
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+#inputName::selection {
+    color: white;
+    background-color: black;
+}
+
+#submitBtn {
+    width: 60%;
+    height: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 15px;
+    color: white;
+}
+
+#submitBtn:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rankingAlert{
+    margin-top: 100px;
+    width: 550px;
+    height: 750px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    line-height: 200%;
+    top: calc(50% - 375px);
+    left: calc(50% - 275px);
+}
+
+#infoDivRanking{
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#titleRanking{
+    font-size: 42px;
+    font-weight: bold;
+}
+
+#imgRanking {
+    width: 120px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#infoImgRanking {
+    font-style: italic;
+}
+
+#rankingTable{
+    width: 100%;
+    height: 430px;
+    position: absolute;
+    top: 300px;
+    left: 0;
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+}
+
+#rankingTable th {
+    font-size: 30px;
+}
+
+.closeAlertBtn{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.closeAlertBtn:hover{
+    background-color: rgb(180, 0, 0);
+}
+
+#footerDiv{
+    margin-top: 20px;
+}
+
+#socials{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+#facebook, #twitter, #instagram{
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#facebook:hover, #twitter:hover, #instagram:hover{
+    color: rgb(196, 196, 196);
+}
+
+#footer{
+    font-size: 0.6em;
+    text-align: center;
+    color: white;
+}
